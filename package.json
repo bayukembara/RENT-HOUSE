@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lightbox2": "^2.11.5",
+    "photoswipe": "^5.4.4"
+  }
+}
