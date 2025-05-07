@@ -12,10 +12,3 @@ body {
     min-height: 300px;
     object-fit: cover;
 }
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
