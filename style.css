@@ -385,27 +385,62 @@ a {
 
 .gallery-grid {
   display: grid;
-  gap: 14px;
+  gap: 8px;
   grid-auto-flow: dense;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 34px;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  margin-top: 28px;
+  aspect-ratio: 1 / 1;
 }
 
 .gallery-item {
-  aspect-ratio: 1 / 1;
   background: var(--sage);
   display: block;
   overflow: hidden;
 }
 
 .gallery-item.wide {
-  aspect-ratio: 2 / 1;
   grid-column: span 2;
+  grid-row: span 1;
 }
 
 .gallery-item.tall {
-  aspect-ratio: 3 / 4;
+  grid-column: span 1;
   grid-row: span 2;
+}
+
+.gallery-item:nth-child(1) {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.gallery-item:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.gallery-item:nth-child(3) {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(5),
+.gallery-item:nth-child(10),
+.gallery-item:nth-child(11) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item:nth-child(6),
+.gallery-item:nth-child(7),
+.gallery-item:nth-child(8),
+.gallery-item:nth-child(9),
+.gallery-item:nth-child(12),
+.gallery-item:nth-child(13) {
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .gallery-item img {
@@ -529,9 +564,13 @@ a {
 
   .hero-panel,
   .stats-strip,
-  .facility-grid,
-  .gallery-grid {
+  .facility-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: none;
   }
 
   .hero-panel {
@@ -575,17 +614,39 @@ a {
 
   .hero-panel,
   .stats-strip,
-  .facility-grid,
-  .gallery-grid {
+  .facility-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    aspect-ratio: auto;
+    grid-auto-rows: 120px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
   }
 
   .gallery-item,
   .gallery-item.wide,
-  .gallery-item.tall {
-    aspect-ratio: 4 / 3;
-    grid-column: auto;
-    grid-row: auto;
+  .gallery-item.tall,
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(5),
+  .gallery-item:nth-child(6),
+  .gallery-item:nth-child(7),
+  .gallery-item:nth-child(8),
+  .gallery-item:nth-child(9),
+  .gallery-item:nth-child(10),
+  .gallery-item:nth-child(11),
+  .gallery-item:nth-child(12) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .gallery-item:nth-child(13) {
+    grid-column: span 2;
+    grid-row: span 2;
   }
 
   .hero-actions,
