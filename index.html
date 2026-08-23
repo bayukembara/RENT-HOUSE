@@ -14,10 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="node_modules/lightbox2/dist/css/lightbox.min.css"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -353,12 +349,33 @@
       </section>
     </main>
 
+    <div class="image-modal" id="image-modal" aria-hidden="true">
+      <div class="image-modal__backdrop" data-modal-close></div>
+      <div
+        class="image-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Pratinjau foto properti"
+      >
+        <button class="image-modal__button image-modal__close" type="button" data-modal-close aria-label="Tutup foto">
+          Tutup
+        </button>
+        <button class="image-modal__button image-modal__prev" type="button" data-modal-prev aria-label="Foto sebelumnya">
+          Sebelumnya
+        </button>
+        <img src="" alt="" id="modal-image" />
+        <button class="image-modal__button image-modal__next" type="button" data-modal-next aria-label="Foto berikutnya">
+          Berikutnya
+        </button>
+        <p class="image-modal__caption" id="modal-caption"></p>
+      </div>
+    </div>
+
     <footer class="site-footer">
       <p>Rumah Dua Lantai untuk Sewa Tahunan</p>
       <a href="#home">Kembali ke atas</a>
     </footer>
 
-    <script src="node_modules/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
